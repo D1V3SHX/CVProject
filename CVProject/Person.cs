@@ -21,7 +21,7 @@ namespace CVProject
         private Courses[] courses;
         private Training[] trainings;
 
-        //private EducationAndTraining[] educationAndTraining;
+        //private EducationAndTraining[] educationAndTraining ;
 
         //private ContactDetails[] contactDetails;
         //private Education[] educationDetails;
