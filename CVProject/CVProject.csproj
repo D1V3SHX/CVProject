@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Academic.cs" />
     <Compile Include="ContactDetails.cs" />
     <Compile Include="Courses.cs" />
-    <Compile Include="Education.cs" />
     <Compile Include="Experience.cs" />
     <Compile Include="IMenuDetails.cs" />
     <Compile Include="MainMenu.cs" />
