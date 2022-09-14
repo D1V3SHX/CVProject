@@ -19,12 +19,15 @@ namespace CVProject
         private Skills skills;
 
         private Courses[] courses;
+        private ContactDetails[]  contactDetails;
+
         private Training[] trainings;
+        private TechnologySkills technologySkills;
 
         //private EducationAndTraining[] educationAndTraining ;
 
         //private ContactDetails[] contactDetails;
-        //private Education[] educationDetails;
+        //private Education[] educationDetai ls;
        // private Education[] academics;
         //private Education[] trainings;
         
@@ -32,7 +35,7 @@ namespace CVProject
         //public Experience[] Experience { get => Experience1; set => Experience1 = value; }
         public List<Experience> Experience{ get => experience; set => experience = value; }
 
-        public Person(string fName, string lName, int age, string introdction, List<Experience> experience,  Skills skills, Courses[] courses, Training[] trainings)
+        public Person(string fName, string lName, int age, string introdction, List<Experience> experience,  Skills skills, Courses[] courses, Training[] trainings, ContactDetails[] contactDetails, TechnologySkills technologySkills)
         {
 
             this.fname = fName;
@@ -43,6 +46,8 @@ namespace CVProject
             this.courses = courses;
             this.skills = skills;
             this.trainings = trainings;
+            this.contactDetails = contactDetails;
+            this.technologySkills = technologySkills;
 
         }
        
@@ -110,6 +115,7 @@ namespace CVProject
             while (!goBack)
             {
                 p1.displayExperience();
+                //validation for invalid input incluidng non integers and for choices not shown
                 try
                 {
                     int response = Convert.ToInt32(Console.ReadLine());
@@ -134,7 +140,7 @@ namespace CVProject
 
 
         
-        //EDUCATION AND TRAINING HANDLING
+//EDUCATION AND TRAINING HANDLING
 
 
         public void displayCourses()
@@ -162,22 +168,31 @@ namespace CVProject
         public void handleEducationTraining(Person p1)
         {
             Boolean goBack = false;
-            int choice;
+            //int choice;
 
             while (!goBack)
             {
                 p1.displayCourses();
-                choice = Convert.ToInt32(Console.ReadLine());
+                //validation for invalid input incluidng non integers and for choices not shown
+                try
+                {
+                    int response = Convert.ToInt32(Console.ReadLine());
 
-                if (choice == 0)
-                {
-                    goBack = true;
+                    if ((response <= p1.courses.Length) && (response > 0))
+                    {
+                        p1.getCourseDetails(response);
+                    }
+                    else if (response==0)
+                    {
+                        goBack = true;
+                    }
                 }
-                else
+                catch (System.FormatException)
                 {
-                    p1.getCourseDetails(choice);
-                    //Console.WriteLine("aaa");
+                    p1.displayCourses();
                 }
+
+  
                 //Console.WriteLine(choice);
             }
         }
@@ -196,6 +211,34 @@ namespace CVProject
             skills.displayMenu();
         }
 
+        //TECHNOLOGY SKILLS HANDLING
+        public void handleTechnologySkillsMenu(Person p1)
+        {
+
+            p1.displayTechnoSkills();
+            MainMenu mainmenu = new MainMenu();
+            mainmenu.handlemenu(p1);
+        }
+        public void displayTechnoSkills()
+        {
+            this.technologySkills.displayMenu();
+        }
+
+
+        //CONTACT DETAILS HANDLING
+        public void handleContactMenu(Person p1)
+        {
+            Console.WriteLine();
+
+            for (int i = 0; i < p1.contactDetails.Length;i++)
+            {
+                p1.contactDetails[i].displayMenu();
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            MainMenu mainmenu = new MainMenu();
+            mainmenu.handlemenu(p1);
+        }
 
         //ADD EXPERIENCE;
         public void AddExperience(Experience e)

@@ -14,7 +14,7 @@ namespace CVProject
 
 
 
-            //USER DATA HARDCODED
+   //USER DATA HARDCODED
             string intro1 = "Aiming to reduce global warming throgh sustainable energy production and consumption. " +
                              "Planning to reduce the risk of human extinction by making life multi-planetary and setting up a" +
                              " human colony on Mars";
@@ -53,16 +53,34 @@ namespace CVProject
             //SKILLS
             string[] skillsArray = { "Honesty", "Discipline", "Punctual"};
             Skills skills = new Skills(skillsArray);
+            
+            //TECHNOLOGICAL SKILLS
+            string[] TechnoskillsArray = { "JAVA", "C#", "Rocket Engineering" };
+            TechnologySkills technoskills = new TechnologySkills(TechnoskillsArray);
+
+            //CONTACT DETAILS
+            string[] numbers = {"8938483483", "343434343" };
+            string[] emails = {"elon.musk@gmail.com", "elon.musk@ceridian.com" };
+            ContactDetails[] contactDetails = new ContactDetails[1];
+            contactDetails[0] = new ContactDetails(numbers, emails);
+
+
 
 
             //CREATING A USER
-            Person p1 = new Person("Elon", "Musk", 51, intro1, experience,  skills, courses, trainings);
-            //Person p2 = new Person("Tony", "Stark", 48, intro2, experience, skills, courses, trainings);
+            Person p1 = new Person("Elon", "Musk", 51, intro1, experience,  skills, courses, trainings, contactDetails, technoskills);
+            //Person p2 = new Person("Tony", "Stark", 48, intro2, experience,  skills, courses, trainings, contactDetails, technoskills);
 
+            //Dynnamically adding an experience
             p1.AddExperience(new Experience("Solar City", "2020", "2021", "fulltime", "Chairman", "Electric Vehicles is the way to go"));
+
+
+ //END OF HARD CODED VALUES
+
 
             //FIXED INTRODUCTION DISPLAY
             p1.displayIntroduction();
+
 
             //CALLING MAIN MENU 
             MainMenu mainmenu = new MainMenu();

@@ -27,13 +27,16 @@ namespace CVProject
             
         }
 
+        //MAIN MENU HANDLING USING DICTIONARY
         public void handlemenu(Person p1)
         {   //Mapping strings to methods
             var MainMenuDictionary = new Dictionary<string, Action>()
             {
                 {"Experience", () => handleExperience(p1) },
                 {"Education", () => handleEducation(p1) },
-                {"Skills", () => handleSkills(p1) }
+                {"Skills", () => handleSkills(p1) },
+                {"TechnologicalSkills", () => TechnologicalSkills(p1) },
+                {"ContactDetails", () => handleContactDetails(p1) }
 
             };      
             while (true)
@@ -44,7 +47,7 @@ namespace CVProject
                 var responseAsString = Console.ReadLine();
                 int response;
                 bool parseSuccess = int.TryParse(responseAsString, out response);
-
+                //validation for invalid input incluidng non integers and for choices not shown
                 if ( (response <= MainMenuDictionary.Count) && (response>0) && parseSuccess )
                 {
                     MainMenuDictionary[((MainMenuOptionsEnum)response).ToString()]();
@@ -56,6 +59,16 @@ namespace CVProject
                 }
                 
             }
+        }
+
+        private void TechnologicalSkills(Person p1)
+        {
+            p1.handleTechnologySkillsMenu(p1);
+        }
+
+        private void handleContactDetails(Person p1)
+        {
+            p1.handleContactMenu(p1);
         }
 
         private void handleEducation(Person p1)
@@ -82,7 +95,7 @@ namespace CVProject
             Education = 2,
             Skills = 3,
             TechnologicalSkills = 4,
-            ContactDeatils = 5,
+            ContactDetails = 5,
 
         }
 

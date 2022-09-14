@@ -47,7 +47,6 @@
     <Compile Include="ContactDetails.cs" />
     <Compile Include="Courses.cs" />
     <Compile Include="Education.cs" />
-    <Compile Include="EducationAndTraining.cs" />
     <Compile Include="Experience.cs" />
     <Compile Include="IMenuDetails.cs" />
     <Compile Include="MainMenu.cs" />
@@ -55,6 +54,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skills.cs" />
+    <Compile Include="TechnologySkills.cs" />
     <Compile Include="Training.cs" />
   </ItemGroup>
   <ItemGroup>

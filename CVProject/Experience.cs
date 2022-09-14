@@ -26,7 +26,7 @@ namespace CVProject
             this.JobDescription = jobDescription;
         }
 
-        //overloaded constructor for current job
+        //overloaded constructor for current job --- if the workedTo is not passed, it will be assumed currently working in this job and the workedTo will be set to "present"
         public Experience(string companyName, string workedFrom, string employementType, string jobTitle, string jobDescription, bool currentJob)
         {
             this.CompanyName = companyName;
