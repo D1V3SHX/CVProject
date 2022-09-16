@@ -14,8 +14,10 @@ namespace CVProject
         private string courseType;
         private string[] modules;
         private string[] projects;
+        private string trainingDesc;
+        private bool isTraining;
 
-        public Courses(string startDate, string endDate,string courseName, string courseType, string[] modules, string[] projects)
+        public Courses(string startDate, string endDate,string courseName, string courseType, string[] modules, string[] projects, bool isTraining)
         {
             this.EndDate = endDate;
             this.StartDate = startDate;
@@ -23,6 +25,16 @@ namespace CVProject
             this.CourseType = courseType;
             this.Modules = modules;
             this.Projects = projects;
+            this.isTraining = isTraining;
+        }
+
+        public Courses(string startDate, string endDate, string courseName, string trainingDesc, bool isTraining)
+        {
+            this.EndDate = endDate;
+            this.StartDate = startDate;
+            this.CourseName = courseName;
+            this.trainingDesc = trainingDesc;
+            this.isTraining = isTraining;
         }
 
         public string CourseName { get => courseName; set => courseName = value; }
@@ -34,19 +46,29 @@ namespace CVProject
 
         public void displayCourseDetails()
         {
-            Console.WriteLine();
-            Console.WriteLine("------Modules:------");
-            for (int i = 0; i < Modules.Length; i++)
+            if (isTraining)
             {
-                Console.WriteLine(Modules[i]);
+                Console.WriteLine();
+                //Console.WriteLine("------Tr:------");
+                Console.WriteLine(this.trainingDesc);
+                Console.WriteLine();
             }
-            Console.WriteLine();
-            Console.WriteLine("------Projects:-------");
-            for (int i = 0; i < Projects.Length; i++)
+            else
             {
-                Console.WriteLine(Projects[i]);
+                Console.WriteLine();
+                Console.WriteLine("------Modules:------");
+                for (int i = 0; i < Modules.Length; i++)
+                {
+                    Console.WriteLine(Modules[i]);
+                }
+                Console.WriteLine();
+                Console.WriteLine("------Projects:-------");
+                for (int i = 0; i < Projects.Length; i++)
+                {
+                    Console.WriteLine(Projects[i]);
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
 
         public void displayMenu()

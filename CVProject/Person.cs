@@ -24,18 +24,13 @@ namespace CVProject
         private Training[] trainings;
         private TechnologySkills technologySkills;
 
-        //private EducationAndTraining[] educationAndTraining ;
-
-        //private ContactDetails[] contactDetails;
-        //private Education[] educationDetai ls;
-       // private Education[] academics;
-        //private Education[] trainings;
+     
         
 
         //public Experience[] Experience { get => Experience1; set => Experience1 = value; }
         public List<Experience> Experience{ get => experience; set => experience = value; }
 
-        public Person(string fName, string lName, int age, string introdction, List<Experience> experience,  Skills skills, Courses[] courses, Training[] trainings, ContactDetails[] contactDetails, TechnologySkills technologySkills)
+        public Person(string fName, string lName, int age, string introdction, List<Experience> experience,  Skills skills, Courses[] courses, ContactDetails[] contactDetails, TechnologySkills technologySkills)
         {
 
             this.fname = fName;
@@ -45,7 +40,7 @@ namespace CVProject
             this.Experience = experience;
             this.courses = courses;
             this.skills = skills;
-            this.trainings = trainings;
+            //this.trainings = trainings;
             this.contactDetails = contactDetails;
             this.technologySkills = technologySkills;
 
@@ -131,8 +126,10 @@ namespace CVProject
                 }
                 catch (System.FormatException)
                 {
-                    p1.displayExperience();
+                    //p1.displayExperience();
+                    //break;
                 }              
+
 
             }
 
@@ -184,11 +181,13 @@ namespace CVProject
                     }
                     else if (response==0)
                     {
+                       // Console.WriteLine("u clciked 0");
                         goBack = true;
                     }
                 }
                 catch (System.FormatException)
                 {
+                    //Console.WriteLine("u clciked char");
                     p1.displayCourses();
                 }
 
@@ -344,3 +343,11 @@ namespace CVProject
 //        {
 //            continue;
 //        }
+
+
+//private EducationAndTraining[] educationAndTraining ;
+
+//private ContactDetails[] contactDetails;
+//private Education[] educationDetai ls;
+// private Education[] academics;
+//private Education[] trainings;

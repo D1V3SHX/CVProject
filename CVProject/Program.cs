@@ -40,15 +40,16 @@ namespace CVProject
             string[] modules2 = { "OS", "OOT", "GUI", "web" };
             string[] projects2 = { "Prison Database", "Restaurant Website", "Attendance Management System" };
 
-            //COUSES
-            Courses[] courses = new Courses[2];
-            courses[0] = new Courses("2020", "2021", "Computer Science", "full-time", modules1, projects1);
-            courses[1] = new Courses("2021", "2022", "Computer Science", "full-time", modules2, projects2);
+            //EDUCATION AND TRAINING
+            Courses[] courses = new Courses[3];
+            courses[0] = new Courses("2020", "2021", "Computer Science", "full-time", modules1, projects1,false);
+            courses[1] = new Courses("2021", "2022", "Computer Science", "full-time", modules2, projects2,false);
+            courses[2] = new Courses("2021", "2022", "Git Training", "Learned how to use Git Bash and Github", true);
 
-            //TRAININGS
-            Training[] trainings = new Training[2];
-            trainings[0] = new Training("2019", "2020", "Git Training", "Learned how to use git");
-            trainings[1] = new Training("2019", "2020", "Clean Code", "Learned how to use clean code ");
+            //TRAININGS            //Training[] trainings = new Training[2];
+            //trainings[0] = new Training("2019", "2020", "Git Training", "Learned how to use git");
+            //trainings[1] = new Training("2019", "2020", "Clean Code", "Learned how to use clean code ");
+
 
             //SKILLS
             string[] skillsArray = { "Honesty", "Discipline", "Punctual"};
@@ -68,27 +69,27 @@ namespace CVProject
 
 
             //CREATING A USER
-            Person p1 = new Person("Elon", "Musk", 51, intro1, experience,  skills, courses, trainings, contactDetails, technoskills);
-            //Person p2 = new Person("Tony", "Stark", 48, intro2, experience,  skills, courses, trainings, contactDetails, technoskills);
+            Person user1 = new Person("Elon", "Musk", 51, intro1, experience,  skills, courses, contactDetails, technoskills);
+            //Person p2 = new Person("Tony", "Stark", 48, intro2, experience,  skills, courses, contactDetails, technoskills);
 
             //Dynnamically adding an experience
-            p1.AddExperience(new Experience("Solar City", "2020", "2021", "fulltime", "Chairman", "Electric Vehicles is the way to go"));
+            user1.AddExperience(new Experience("Solar City", "2020", "2021", "fulltime", "Chairman", "Electric Vehicles is the way to go"));
 
 
- //END OF HARD CODED VALUES
+            //END OF HARD CODED VALUES
+            //*************************************************************************************************************************************************************
+
+                       //FIXED INTRODUCTION DISPLAY
+                         user1.displayIntroduction();
 
 
-            //FIXED INTRODUCTION DISPLAY
-            p1.displayIntroduction();
-
-
-            //CALLING MAIN MENU 
-            MainMenu mainmenu = new MainMenu();
-            mainmenu.handlemenu(p1);
+                        //CALLING MAIN MENU 
+                        MainMenu mainmenu = new MainMenu();
+                        mainmenu.handlemenu(user1);
             
 
-            //PREVENT CONSOLE FROM CLOSING
-            Console.ReadLine();
+                        //PREVENT CONSOLE FROM CLOSING
+                        Console.ReadLine();
         }
 
     }
