@@ -188,7 +188,7 @@ namespace CVProject
                 catch (System.FormatException)
                 {
                     //Console.WriteLine("u clciked char");
-                    p1.displayCourses();
+                   // p1.displayCourses();
                 }
 
   

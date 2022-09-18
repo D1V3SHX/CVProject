@@ -70,7 +70,7 @@ namespace CVProject
 
             //CREATING A USER
             Person user1 = new Person("Elon", "Musk", 51, intro1, experience,  skills, courses, contactDetails, technoskills);
-            //Person p2 = new Person("Tony", "Stark", 48, intro2, experience,  skills, courses, contactDetails, technoskills);
+            //Person p2 = new Person("Tony", "Stark", 48, intro2, experience,  skills, courses,  contactDetails, technoskills);
 
             //Dynnamically adding an experience
             user1.AddExperience(new Experience("Solar City", "2020", "2021", "fulltime", "Chairman", "Electric Vehicles is the way to go"));
